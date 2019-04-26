@@ -15,9 +15,16 @@ _global_script_class_icons={
 
 [application]
 
-config/name="he1sit"
+config/name="he1st"
+run/main_scene="res://level/main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=800
+window/vsync/use_vsync=false
 
 [rendering]
 
+threads/thread_model=2
 environment/default_environment="res://default_env.tres"
