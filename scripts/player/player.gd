@@ -1,4 +1,4 @@
-extends Area2D
+extends "../character.gd"
 
 export var speed = 300
 var screen_size
@@ -24,9 +24,8 @@ func _process(delta):
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.stop()
 	
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	velocity = velocity.normalized() * (speed * delta)
+	move_and_collide(velocity)
 	
 	
 	if (velocity.x > 0):
