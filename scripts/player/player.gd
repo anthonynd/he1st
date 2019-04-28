@@ -27,7 +27,6 @@ func _process(delta):
 	velocity = velocity.normalized() * (speed * delta)
 	move_and_collide(velocity)
 	
-	
 	if (velocity.x > 0):
 		$AnimatedSprite.rotation_degrees = 90
 	elif (velocity.x < 0):
@@ -37,6 +36,3 @@ func _process(delta):
 	elif (velocity.y < 0):
 		$AnimatedSprite.rotation_degrees = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -19,6 +19,10 @@ config/name="he1st"
 run/main_scene="res://level/main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+globals="*res://scripts/globals.gd"
+
 [display]
 
 window/size/width=800
@@ -50,4 +54,5 @@ move_up={
 [rendering]
 
 threads/thread_model=2
+environment/default_clear_color=Color( 0.254902, 0.419608, 0.517647, 1 )
 environment/default_environment="res://default_env.tres"
