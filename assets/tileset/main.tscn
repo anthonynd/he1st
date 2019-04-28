@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://textures/tilemap/tilemap.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
 
 [node name="Node" type="Node"]
 
@@ -16,7 +19,11 @@ region_rect = Rect2( 64, 0, 64, 64 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D"]
+position = Vector2( 0.307358, 0 )
 shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Wall"]
+occluder = SubResource( 2 )
 
 [node name="Ground" type="Sprite" parent="."]
 position = Vector2( 32, 96 )
