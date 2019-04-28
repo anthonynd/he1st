@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/gui/fps.gd" type="Script" id=1]
+[ext_resource path="res://scripts/gui/mainMenu/mainMenu.gd" type="Script" id=2]
 
 [node name="main_gui" type="Control"]
 anchor_right = 1.0
@@ -11,21 +12,46 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -800.0
 margin_bottom = 14.0
-text = "Test"
+text = "0"
 align = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="info_container" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 1.10803
 margin_bottom = 1.10803
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="info_container"]
 margin_right = 800.0
 margin_bottom = 600.0
 
-[node name="fps" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="fps" type="Label" parent="info_container/VBoxContainer"]
 margin_right = 800.0
 margin_bottom = 14.0
 script = ExtResource( 1 )
 
+[node name="mainMenu" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu"]
+margin_left = 379.0
+margin_top = 278.0
+margin_right = 420.0
+margin_bottom = 322.0
+
+[node name="mainMenuButtons" type="VBoxContainer" parent="mainMenu/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 44.0
+
+[node name="startGameBtn" type="Button" parent="mainMenu/HBoxContainer/mainMenuButtons"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="exitGameBtn" type="Button" parent="mainMenu/HBoxContainer/mainMenuButtons"]
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 44.0
+text = "Exit"
