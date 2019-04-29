@@ -5,6 +5,7 @@ export (PackedScene) var slot_2
 export (PackedScene) var slot_3
 export (PackedScene) var throwable
 
+export var speed = 300
 export var health = 100
 export var armor = 0
 

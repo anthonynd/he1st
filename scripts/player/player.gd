@@ -1,13 +1,8 @@
 extends "../character.gd"
 
-export var speed = 300
-var screen_size
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	screen_size = get_viewport_rect().size
-
 func _process(delta):
+	$Head.look_at(get_global_mouse_position())
+	
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -19,20 +14,10 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
+		$Head.play()
 	else:
-		$AnimatedSprite.frame = 0
-		$AnimatedSprite.stop()
+		$Head.frame = 0
+		$Head.stop()
 	
 	velocity = velocity.normalized() * (speed * delta)
 	move_and_collide(velocity)
-	
-	if (velocity.x > 0):
-		$AnimatedSprite.rotation_degrees = 90
-	elif (velocity.x < 0):
-		$AnimatedSprite.rotation_degrees = 270
-	elif (velocity.y > 0):
-		$AnimatedSprite.rotation_degrees = 180
-	elif (velocity.y < 0):
-		$AnimatedSprite.rotation_degrees = 0
-
