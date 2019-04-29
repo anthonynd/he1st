@@ -23,7 +23,6 @@ texture = ExtResource( 2 )
 [node name="DetectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="DetectArea"]
-polygon = PoolVector2Array( -0.0605011, -24.1199, 138.38, -65.5032, 137.879, 59.4184, 0.189835, 23.6192 )
-
+polygon = PoolVector2Array( 0, -25, 140, -65, 140, 65, 0, 25 )
 [connection signal="body_entered" from="DetectArea" to="." method="_on_DetectArea_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="." method="_on_DetectArea_body_exited"]
