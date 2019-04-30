@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/normalEnemy.png-ebc8f3f882703d66e091ca12e90f4d77.stex"
+path="res://.import/normalEnemy.png-5fbe8de19737e566bfa6d36b96a54169.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/enemy/normalEnemy.png"
-dest_files=[ "res://.import/normalEnemy.png-ebc8f3f882703d66e091ca12e90f4d77.stex" ]
+source_file="res://entities/enemy/normalEnemy.png"
+dest_files=[ "res://.import/normalEnemy.png-5fbe8de19737e566bfa6d36b96a54169.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-87d116b173d5b887cc1f09a4d3453f90.stex"
+path="res://.import/grenade.png-7c5714d53c5f36cd2a9137253594358b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/light/circle.png"
-dest_files=[ "res://.import/circle.png-87d116b173d5b887cc1f09a4d3453f90.stex" ]
+source_file="res://assets/throwable/grenade.png"
+dest_files=[ "res://.import/grenade.png-7c5714d53c5f36cd2a9137253594358b.stex" ]
 
 [params]
 
