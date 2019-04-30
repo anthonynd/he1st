@@ -1,4 +1,4 @@
-extends "res://scripts/character.gd"
+extends "res://entities/character.gd"
 
 onready var parent = get_parent()
 

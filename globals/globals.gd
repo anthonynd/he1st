@@ -31,7 +31,7 @@ func setMap(mapName):
 	
 	if(currentMap):
 		currentMap.queue_free()
-	var s = ResourceLoader.load("res://level/maps/"+mapName+".tscn")
+	var s = load("res://levels/house.tscn")
 	currentMap = s.instance()
 	mapNode.add_child(currentMap)
 	if(!player.visible):
