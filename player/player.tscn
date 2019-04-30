@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://textures/player/player_small.png" type="Texture" id=2]
 [ext_resource path="res://textures/player/player_big.png" type="Texture" id=3]
-[ext_resource path="res://textures/light/circle.png" type="Texture" id=4]
+[ext_resource path="res://scripts/player/lightOfSight.gd" type="Script" id=4]
+[ext_resource path="res://textures/light/circle.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,6 +19,7 @@ radius = 21.845
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
+detect_radius = 400
 
 [node name="mainCam" type="Camera2D" parent="."]
 current = true
@@ -25,12 +27,16 @@ current = true
 [node name="Head" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 
+[node name="lightOfSight" type="Light2D" parent="Head"]
+visible = false
+shadow_enabled = true
+script = ExtResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
 [node name="playerLight" type="Light2D" parent="."]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter_smooth = 2.0
-

@@ -1,5 +1,8 @@
 extends "../character.gd"
 
+export (int) var detect_radius = 150
+export (int) var FOV = 50
+
 func _process(delta):
 	$Head.look_at(get_global_mouse_position())
 	
