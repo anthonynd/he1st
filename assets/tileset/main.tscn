@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tileset/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset/tilemap.png" type="Texture" id=2]
@@ -9,6 +9,9 @@ extents = Vector2( 32, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12.8571, 31.8915 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -39,6 +42,12 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Glass"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Glass/StaticBody2D"]
+shape = SubResource( 3 )
+
 [node name="Tilesheet" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 3 )
 
