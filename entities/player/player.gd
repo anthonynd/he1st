@@ -17,10 +17,6 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$Head.play()
-	else:
-		$Head.frame = 0
-		$Head.stop()
 	
 	velocity = velocity.normalized() * (speed * delta)
 	move_and_collide(velocity)

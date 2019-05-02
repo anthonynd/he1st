@@ -1,5 +1,7 @@
 extends "res://entities/character.gd"
 
+# TODO: Fix player detection through walls
+
 onready var parent = get_parent()
 
 export (int) var detect_radius
@@ -36,13 +38,11 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	draw_polygon(points_arc, colors)
 
 func _on_DetectionArea_body_entered(body):
-	if body.name == "player":
-		fov_color = RED
-		update()
+	fov_color = RED
+	update()
 	pass # Replace with function body.
 
 func _on_DetectionArea_body_exited(body):
-	if body.name == "player":
-		fov_color = YELLOW
-		update()
+	fov_color = YELLOW
+	update()
 	pass # Replace with function body.
