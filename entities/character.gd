@@ -46,4 +46,6 @@ func set_slot(index):
 
 func damage(health_point):
 	health -= health_point
+	if health <= 0:
+		queue_free()
 	return health

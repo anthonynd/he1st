@@ -40,9 +40,7 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 func _on_DetectionArea_body_entered(body):
 	fov_color = RED
 	update()
-	pass # Replace with function body.
 
 func _on_DetectionArea_body_exited(body):
 	fov_color = YELLOW
 	update()
-	pass # Replace with function body.

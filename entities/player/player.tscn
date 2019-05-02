@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/circle.png" type="Texture" id=2]
-[ext_resource path="res://assets/spritesheet_characters.png" type="Texture" id=3]
+[ext_resource path="res://entities/player/player_big.png" type="Texture" id=3]
 [ext_resource path="res://entities/player/lightOfSight.gd" type="Script" id=4]
+[ext_resource path="res://entities/gun/gun.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 10.8092
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.3675
 
 [node name="player" type="KinematicBody2D"]
 collision_layer = 2
@@ -27,20 +28,19 @@ shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter_smooth = 2.0
 
-[node name="Head" type="Sprite" parent="."]
+[node name="Body" type="Sprite" parent="."]
 texture = ExtResource( 3 )
-offset = Vector2( 11, 0 )
-region_enabled = true
 region_rect = Rect2( 264, 131, 48, 45 )
 
-[node name="lightOfSight" type="Light2D" parent="Head"]
+[node name="lightOfSight" type="Light2D" parent="Body"]
 visible = false
 shadow_enabled = true
 script = ExtResource( 4 )
 
+[node name="Gun" parent="Body" instance=ExtResource( 5 )]
+position = Vector2( 29.6349, 14.1005 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 37, 9 )
-
+[connection signal="shoot" from="Body/Gun" to="." method="_on_Gun_shoot"]

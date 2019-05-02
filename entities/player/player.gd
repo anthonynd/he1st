@@ -4,7 +4,7 @@ export (int) var detect_radius = 150
 export (int) var FOV = 50
 
 func _process(delta):
-	$Head.look_at(get_global_mouse_position())
+	$Body.look_at(get_global_mouse_position())
 	
 	var velocity = Vector2()
 	if Input.is_action_pressed("move_right"):
@@ -17,6 +17,8 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+	if Input.is_action_just_pressed("click"):
+		# TODO: When slots are working, change to shoot whatever is in the "active" slot
+		$Body/Gun.shoot()
 	
-	velocity = velocity.normalized() * (speed * delta)
-	move_and_collide(velocity)
+	move_and_slide(velocity)
