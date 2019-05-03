@@ -11,7 +11,7 @@ __meta__ = {
 }
 Bullet = ExtResource( 2 )
 fire_rate = 5.0
-ammo = 6
+ammo = 99999
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )

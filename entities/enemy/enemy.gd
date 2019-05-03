@@ -35,7 +35,7 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	$DetectionArea/CollisionPolygon2D.polygon = points_arc
 	
 	# Draw the polygon
-	draw_polygon(points_arc, colors)
+	# draw_polygon(points_arc, colors)
 
 func _on_DetectionArea_body_entered(body):
 	fov_color = RED

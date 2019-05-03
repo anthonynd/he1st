@@ -20,7 +20,7 @@ func shoot():
 		# Spawn bullet
 		var dir = global_rotation
 		var b = Bullet.instance()
-		b.start($Muzzle.global_position, global_rotation)
+		b.start($Muzzle.global_position, dir)
 		get_tree().get_root().add_child(b)
 
 func _on_GunCooldown_timeout():
