@@ -58,4 +58,3 @@ rotation = -1.5412
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -125.191, 353.88 )
-

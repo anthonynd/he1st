@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
-[ext_resource path="res://assets/circle.png" type="Texture" id=2]
-[ext_resource path="res://entities/player/player_with_hands.png" type="Texture" id=3]
-[ext_resource path="res://entities/player/lightOfSight.gd" type="Script" id=4]
-[ext_resource path="res://entities/gun/gun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/gun/gun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/circle.png" type="Texture" id=3]
+[ext_resource path="res://entities/player/player_with_hands.png" type="Texture" id=4]
+[ext_resource path="res://entities/player/lightOfSight.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.3675
@@ -16,32 +16,28 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+slot_1 = ExtResource( 2 )
 detect_radius = 400
 
 [node name="mainCam" type="Camera2D" parent="."]
 current = true
 
 [node name="playerLight" type="Light2D" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 energy = 0.5
 shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter_smooth = 2.0
 
 [node name="Body" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 7, 0 )
 region_rect = Rect2( 264, 131, 48, 45 )
 
 [node name="lightOfSight" type="Light2D" parent="Body"]
 visible = false
 shadow_enabled = true
-script = ExtResource( 4 )
-
-[node name="Gun" parent="Body" instance=ExtResource( 5 )]
-position = Vector2( 40, 0 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[connection signal="shoot" from="Body/Gun" to="." method="_on_Gun_shoot"]

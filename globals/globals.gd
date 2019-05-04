@@ -27,6 +27,6 @@ func setMap(mapName):
 
 	if(currentMap):
 		currentMap.queue_free()
-	var s = load("res://levels/house.tscn")
+	var s = load("res://levels/"+mapName+".tscn")
 	currentMap = s.instance()
 	mapNode.add_child(currentMap)

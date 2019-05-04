@@ -20,5 +20,4 @@ texture = ExtResource( 3 )
 position = Vector2( 18, 0 )
 
 [node name="GunTimer" type="Timer" parent="."]
-
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunCooldown_timeout"]

@@ -12,6 +12,8 @@ export var armor = 0
 var slots = []
 var current_slot = 0
 
+onready var Body = get_node("Body")
+
 func _ready():
 	if slot_1:
 		slots.append(slot_1.instance())
@@ -27,9 +29,11 @@ func _ready():
 	
 	if slots.size() > 0:
 		for sl in slots:
-			sl.position.y = -25
-#			sl.position.x = 5
-			add_child(sl)
+			sl.position.x = 40
+			if(!!Body):
+				Body.add_child(sl)
+			else:
+				add_child(sl)
 		
 		slots[current_slot].visible = true
 		#slots[current_slot].set_ui()
