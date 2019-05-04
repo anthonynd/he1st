@@ -30,8 +30,8 @@ shape = SubResource( 1 )
 [node name="BulletTrail" type="Line2D" parent="."]
 width = 5.0
 default_color = Color( 0.847059, 0.847059, 0.847059, 1 )
+texture_mode = -1
 script = ExtResource( 3 )
 trail_length = 100
 auto_z_index = false
-
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -2,19 +2,21 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.stex"
+path.s3tc="res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.s3tc.stex"
+path.etc2="res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/spritesheet_characters.png"
-dest_files=[ "res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.stex" ]
+dest_files=[ "res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.s3tc.stex", "res://.import/spritesheet_characters.png-3c0c465fcc2845a959d42c5252927ed4.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
