@@ -17,9 +17,18 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+	
 	if Input.is_action_just_pressed("click"):
 		# TODO: When slots are working, change to shoot whatever is in the "active" slot
 		slots[current_slot].shoot()
-		#$Body/Gun.shoot()
+	
+	if Input.is_action_just_pressed("slot_1"):
+		.set_slot(0)
+	if Input.is_action_just_pressed("slot_2"):
+		.set_slot(1)
+	if Input.is_action_just_pressed("slot_3"):
+		.set_slot(2)
+	if Input.is_action_just_pressed("throwable"):
+		.set_slot(3)
 	
 	move_and_slide(velocity)
