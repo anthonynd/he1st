@@ -18,8 +18,10 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	
+	if Input.is_action_just_pressed("reload"):
+		slots[current_slot].reload()
+	
 	if Input.is_action_just_pressed("click"):
-		# TODO: When slots are working, change to shoot whatever is in the "active" slot
 		slots[current_slot].shoot()
 	
 	if Input.is_action_just_pressed("slot_1"):

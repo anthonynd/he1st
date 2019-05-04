@@ -10,8 +10,7 @@ __meta__ = {
 "_edit_group_": true
 }
 Bullet = ExtResource( 2 )
-fire_rate = 5.0
-ammo = 99999
+rate = 120
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
