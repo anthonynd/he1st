@@ -177,6 +177,7 @@ config/icon="res://icon.png"
 [autoload]
 
 globals="*res://globals/globals.gd"
+questManager="*res://globals/quest/questManager.gd"
 
 [display]
 
