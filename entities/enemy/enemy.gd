@@ -11,8 +11,11 @@ const RED = Color(1.0, 0, 0, 0.4)
 const YELLOW = Color(1.0, 1.0, 0, 0.4)
 var fov_color = YELLOW
 
+func _ready():
+	add_to_group("enemies")
+
 func _process(delta):
-	if parent is PathFollow2D:
+	if !is_dead() and parent is PathFollow2D:
 		parent.set_offset(parent.get_offset() + speed * delta)
 		parent.rotate = true
 	else:
@@ -36,6 +39,11 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	
 	# Draw the polygon
 	# draw_polygon(points_arc, colors)
+
+func die():
+	.die()
+	$Body.modulate = Color(0.7, 0.7, 0.7, 0.4)
+	$CollisionShape2D.disabled = true
 
 func _on_DetectionArea_body_entered(body):
 	fov_color = RED

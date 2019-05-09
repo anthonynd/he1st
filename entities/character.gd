@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal killed
+
 export (PackedScene) var slot_1
 export (PackedScene) var slot_2
 export (PackedScene) var slot_3
@@ -46,10 +48,15 @@ func set_slot(index):
 		current_slot = index
 		slots[current_slot].visible = true
 		#slots[current_slot].set_ui()
-	
 
 func damage(health_point):
 	health -= health_point
 	if health <= 0:
-		queue_free()
+		die()
 	return health
+
+func is_dead() -> bool:
+	return health <= 0
+
+func die():
+	emit_signal("killed")

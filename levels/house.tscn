@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/house.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset/main.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/tileset/terrain_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://entities/enemy/enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/distructable/box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/collectible/Collectible.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -37,7 +38,6 @@ format = 1
 tile_data = PoolIntArray( 196621, 434, 0, 262157, 434, 0, 327693, 434, 0, 393229, 434, 0, 458765, 434, 0 )
 
 [node name="paths" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="enemypath1" type="Path2D" parent="paths"]
 curve = SubResource( 1 )
@@ -62,5 +62,8 @@ rotation = -1.5412
 
 [node name="box" parent="env" instance=ExtResource( 5 )]
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="Collectible" parent="." instance=ExtResource( 6 )]
+position = Vector2( 798.029, 364.638 )
+
+[node name="player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -125.191, 353.88 )
