@@ -1,4 +1,4 @@
-extends "./distructable.gd"
+extends "./destructible.gd"
 
 export (PackedScene) var AfterEffect
 onready var GameNode = get_node("/root/game")
