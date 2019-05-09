@@ -17,6 +17,3 @@ texture = ExtResource( 3 )
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 18, 0 )
-
-[node name="GunTimer" type="Timer" parent="."]
-[connection signal="timeout" from="GunTimer" to="." method="_on_GunCooldown_timeout"]

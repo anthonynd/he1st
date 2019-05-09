@@ -2,22 +2,24 @@ extends Node2D
 
 export (PackedScene) var Bullet
 
-export var mag = 30
-export var total_ammo = 30
+
 export var max_mag = 30
-export var max_ammo = 180
-
+export var max_ammo = 30
 export var spread = 2 # For variety if need (not used yet)
-
 export var rate = 30 #RPM
 export var damage_point = 50
 export (bool) var single_fire = false
 export var distance = 1000
 
+var mag
+var ammo
 var rateat60fps
 var timer
 
 func _ready():
+	mag = max_mag
+	ammo = max_ammo
+
 	visible = false
 	# Gun_Ray.cast_to = Vector2(0, distance)
 	
@@ -54,15 +56,15 @@ func shoot():
 		set_ui()
 	
 func set_ui():
-	get_node("/root/globals").printOnScreen("%s/%s" % [mag, total_ammo])
+	get_node("/root/globals").printOnScreen("%s/%s" % [mag, ammo])
 
 func reload():
-	if(mag != max_mag and total_ammo > 0):
+	if mag < max_mag and ammo > 0:
 		var missing_ammo = max_mag - mag
-		if(total_ammo - missing_ammo < 0):
-			mag += total_ammo
-			total_ammo = 0
+		if ammo - missing_ammo < 0:
+			mag += ammo
+			ammo = 0
 		else:
 			mag += missing_ammo
-			total_ammo -= missing_ammo
+			ammo -= missing_ammo
 		set_ui()
