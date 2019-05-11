@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$questList.bbcode_enabled = true;
+	$questPanel/questList.bbcode_enabled = true;
 	pass
 
 func updateQuestList():
@@ -14,7 +14,7 @@ func updateQuestList():
 			currentQuest = "[color=#88ffffff]%s[/color]" % currentQuest
 		
 		qList += currentQuest + "\n"
-	$questList.bbcode_text = qList
+	$questPanel/questList.bbcode_text = qList
 
 func playerHealth(current, total):
 	$playerInfo.text = "HP: %s/%s" % [current, total]
