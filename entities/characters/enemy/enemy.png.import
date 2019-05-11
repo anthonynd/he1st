@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pistol.png-37945030cfd90bfe77d570cd6b5da5a3.stex"
+path="res://.import/enemy.png-1501c801c3699334b8ee35825a934a0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/gun/pistol.png"
-dest_files=[ "res://.import/pistol.png-37945030cfd90bfe77d570cd6b5da5a3.stex" ]
+source_file="res://entities/characters/enemy/enemy.png"
+dest_files=[ "res://.import/enemy.png-1501c801c3699334b8ee35825a934a0c.stex" ]
 
 [params]
 

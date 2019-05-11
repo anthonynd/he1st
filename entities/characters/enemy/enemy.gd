@@ -1,4 +1,4 @@
-extends "res://entities/character.gd"
+extends "../character.gd"
 
 # TODO: Fix player detection through walls
 
@@ -7,7 +7,7 @@ onready var parent = get_parent()
 export (int) var detect_radius
 export (int) var FOV
 
-const RED = Color(1.0, 0, 0, 0.2)
+const RED = Color(1.0, 0, 0, 0.5)
 const YELLOW = Color(1.0, 1.0, 0, 0.2)
 const WHITE = Color(1, 1, 1, 0.2)
 var fov_color = WHITE
@@ -56,12 +56,14 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	$DetectionArea/CollisionPolygon2D.polygon = points_arc
 	
 	# Draw the polygon
-	draw_polygon(points_arc, colors)
+	# draw_polygon(points_arc, colors)
 
 func die():
 	.die()
 	$Body.modulate = Color(0.7, 0.7, 0.7, 0.4)
 	$CollisionShape2D.disabled = true
+	$DetectionArea/CollisionPolygon2D.disabled = true
+	target = null
 
 func _on_DetectionArea_body_entered(body):
 	if not target:

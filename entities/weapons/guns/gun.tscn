@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://entities/gun/gun.gd" type="Script" id=1]
-[ext_resource path="res://entities/bullet/bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/gun/pistol.png" type="Texture" id=3]
+[ext_resource path="res://entities/weapons/guns/gun.gd" type="Script" id=1]
+[ext_resource path="res://entities/weapons/guns/bullet/bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/weapons/guns/pistol.png" type="Texture" id=3]
 
 [node name="Gun" type="Node2D"]
 script = ExtResource( 1 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy.png-220154df9f548fbed7636b5c47b9811e.stex"
+path="res://.import/player_with_hands.png-1173b85fd71819b7c00278b2e27f02f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemy/enemy.png"
-dest_files=[ "res://.import/enemy.png-220154df9f548fbed7636b5c47b9811e.stex" ]
+source_file="res://entities/characters/player/player_with_hands.png"
+dest_files=[ "res://.import/player_with_hands.png-1173b85fd71819b7c00278b2e27f02f2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
