@@ -31,28 +31,61 @@ margin_right = 800.0
 margin_bottom = 14.0
 script = ExtResource( 1 )
 
-[node name="inGameUI" type="MarginContainer" parent="."]
+[node name="inGameUI" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 15.0
-margin_right = -15.0
-margin_bottom = -15.0
 script = ExtResource( 2 )
 
 [node name="questList" type="RichTextLabel" parent="inGameUI"]
-margin_right = 770.0
-margin_bottom = 570.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 180, 320 )
+rect_clip_content = false
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "[b]Quests[/b]"
 text = "Quests"
 
-[node name="Grid" type="GridContainer" parent="inGameUI"]
-margin_right = 770.0
-margin_bottom = 570.0
+[node name="playerInfo" type="Label" parent="inGameUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -34.0
+margin_right = 120.0
+margin_bottom = -20.0
+text = "HP: 100/100"
+valign = 2
+
+[node name="gunInfo" type="VBoxContainer" parent="inGameUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -65.0
+margin_top = -60.0
+margin_right = -20.0
+margin_bottom = -20.0
+alignment = 2
+
+[node name="gunName" type="Label" parent="inGameUI/gunInfo"]
+margin_top = 8.0
+margin_right = 45.0
+margin_bottom = 22.0
+text = "Pistol"
+align = 2
+
+[node name="gunAmmo" type="Label" parent="inGameUI/gunInfo"]
+margin_top = 26.0
+margin_right = 45.0
+margin_bottom = 40.0
+text = "10/500"
+align = 2
 
 [node name="mainMenu" type="CenterContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
