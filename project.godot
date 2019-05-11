@@ -190,6 +190,10 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "godot-next" )
 
+[gui]
+
+theme/custom_font="res://assets/fonts/BitPotion/bitPotionExt.tres"
+
 [input]
 
 move_right={

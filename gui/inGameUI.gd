@@ -1,16 +1,17 @@
 extends Control
 
-onready var QM = get_node("/root/questManager")
-
 func _ready():
 	$questList.bbcode_enabled = true;
 	pass
 
 func updateQuestList():
 	var qList = "[b]Quests[/b]\n"
-	for quest in QM.QuestList:
+	for quest in questManager.QuestList:
+		var currentQuest = "%s: %s / %s" % [quest.title, quest.currentValue, quest.goal]
 		if quest.optional:
-			qList += "%s: %s / %s (optional)\n" % [quest.title, quest.currentValue, quest.goal]
-		else:
-			qList += "%s: %s / %s\n" % [quest.title, quest.currentValue, quest.goal]
-	$questList.bbcode_text = qList;
+			currentQuest += " (optional)"
+		if quest.isDone():
+			currentQuest = "[color=#88ffffff]%s[/color]" % currentQuest
+		
+		qList += currentQuest + "\n"
+	$questList.bbcode_text = qList

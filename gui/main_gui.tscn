@@ -43,31 +43,27 @@ script = ExtResource( 2 )
 [node name="questList" type="RichTextLabel" parent="inGameUI"]
 margin_right = 770.0
 margin_bottom = 570.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[b]123[/b]
-[color=#ff0000]white[/color]"
-text = "123
-white"
+bbcode_text = "[b]Quests[/b]"
+text = "Quests"
 
 [node name="Grid" type="GridContainer" parent="inGameUI"]
 margin_right = 770.0
 margin_bottom = 570.0
 
 [node name="mainMenu" type="CenterContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="mainMenu"]
-editor/display_folded = true
 margin_left = 379.0
 margin_top = 267.0
 margin_right = 420.0
 margin_bottom = 333.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/HBoxContainer"]
-editor/display_folded = true
 margin_right = 41.0
 margin_bottom = 66.0
 
@@ -75,6 +71,7 @@ margin_bottom = 66.0
 margin_right = 41.0
 margin_bottom = 14.0
 text = "he1st"
+align = 1
 
 [node name="VSplitContainer" type="VSplitContainer" parent="mainMenu/HBoxContainer/VBoxContainer"]
 margin_top = 18.0
