@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	var startBtn = $HBoxContainer/mainMenuButtons/startGameBtn
-	var exitBtn = $HBoxContainer/mainMenuButtons/exitGameBtn
+	var startBtn = $HBoxContainer/VBoxContainer/mainMenuButtons/startGameBtn
+	var exitBtn = $HBoxContainer/VBoxContainer/mainMenuButtons/exitGameBtn
 	startBtn.connect("pressed", self, "_set_start_map")
 	exitBtn.connect("pressed", self, "_exit_game")
 	pass # Replace with function body.

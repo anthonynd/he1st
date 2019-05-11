@@ -3,6 +3,10 @@ extends Node
 onready var Quest = load("res://globals/quest/quest.gd")
 
 var QuestList = []
+var gui = null
+
+func _ready():
+	gui = get_node("/root/globals").gui
 
 func add_quest(title: String, quantity: int, optional := false):
 	QuestList.append(Quest.new(title, quantity, optional))
@@ -15,8 +19,6 @@ func clear_quests():
 	QuestList = []
 
 func print_quests():
-	for quest in QuestList:
-		if quest.optional:
-			get_node("/root/globals").printOnScreen("%s: %s / %s (optional)" % [quest.title, quest.currentValue, quest.goal])
-		else:
-			get_node("/root/globals").printOnScreen("%s: %s / %s" % [quest.title, quest.currentValue, quest.goal])
+	var inGameUI = gui.get_node("inGameUI")
+	if(gui and inGameUI):
+		inGameUI.updateQuestList()
