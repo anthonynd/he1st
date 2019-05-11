@@ -15,16 +15,36 @@ var fov_color = WHITE
 var target
 var hit_pos
 
+enum State {
+	IDLE,
+	PATROL,
+	DETECT,
+	ATTACK,
+	DEAD
+}
+
+var currentState = State.IDLE
+var previousState = null
+
 func _ready():
 	add_to_group("enemies")
+	set_slot(0)
 
 func _physics_process(delta):
-	if not is_dead() and parent is PathFollow2D:
+	$debug.text = "%s" % State.keys()[currentState]
+	
+	if (not is_dead() 
+		and currentState != State.DETECT
+		and parent is PathFollow2D):
+		setState(State.PATROL)
+		rotation = 0
 		parent.set_offset(parent.get_offset() + speed * delta)
 		parent.rotate = true
 	
 	if target:
 		aim()
+	else:
+		setState(State.PATROL)
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
@@ -33,7 +53,17 @@ func aim():
 		hit_pos = result.position
 		update()
 		if result.collider.name == "player":
+			setState(State.DETECT) 
+			
+			look_at(hit_pos)
+			
+			if slots[current_slot]:
+				slots[current_slot].shoot()
 			fov_color = RED
+		else:
+			setState(State.PATROL)
+	else:
+		setState(previousState)
 
 func _draw():
 	draw_circle_arc_poly(Vector2(), detect_radius, -FOV/2, FOV/2, fov_color)
@@ -58,12 +88,18 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	# Draw the polygon
 	# draw_polygon(points_arc, colors)
 
+func setState(state: int):
+	if(currentState != state):
+		previousState = currentState
+		currentState = state
+
 func die():
 	.die()
 	$Body.modulate = Color(0.7, 0.7, 0.7, 0.4)
 	$CollisionShape2D.disabled = true
 	$DetectionArea/CollisionPolygon2D.disabled = true
 	target = null
+	setState(State.DEAD)
 
 func _on_DetectionArea_body_entered(body):
 	if not target:
