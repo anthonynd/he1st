@@ -9,6 +9,7 @@ export (PackedScene) var throwable
 
 export var speed = 300
 export var health = 100
+export var totalHealth = 100
 export var armor = 0
 
 var slots = []

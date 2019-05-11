@@ -3,6 +3,11 @@ extends "../character.gd"
 export (int) var detect_radius = 150
 export (int) var FOV = 50
 
+onready var gui = get_node("/root/globals").gui
+
+func _ready():
+	set_slot(0)
+
 func _process(delta):
 	$Body.look_at(get_global_mouse_position())
 	
@@ -25,12 +30,24 @@ func _process(delta):
 		slots[current_slot].shoot()
 	
 	if Input.is_action_just_pressed("slot_1"):
-		.set_slot(0)
+		set_slot(0)
 	if Input.is_action_just_pressed("slot_2"):
-		.set_slot(1)
+		set_slot(1)
 	if Input.is_action_just_pressed("slot_3"):
-		.set_slot(2)
+		set_slot(2)
 	if Input.is_action_just_pressed("throwable"):
-		.set_slot(3)
+		set_slot(3)
 	
 	move_and_slide(velocity)
+	
+func damage(health_point):
+	var currentHealth = .damage(health_point)
+	if gui and gui.get_node("inGameUI"):
+		gui.get_node("inGameUI").playerHealth(currentHealth, totalHealth)
+	return currentHealth
+
+func set_slot(index: int):
+	.set_slot(index)
+	var gui = get_node("/root/globals").gui
+	if gui and gui.get_node("inGameUI"):
+		gui.get_node("inGameUI").setGunName(slots[current_slot].name)

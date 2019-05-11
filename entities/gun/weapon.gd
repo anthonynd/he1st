@@ -56,7 +56,10 @@ func shoot():
 		set_ui()
 	
 func set_ui():
-	get_node("/root/globals").printOnScreen("%s/%s" % [mag, ammo])
+	var gui = get_node("/root/globals").gui
+	if gui and gui.get_node("inGameUI"):
+		gui.get_node("inGameUI").setGunAmmo(mag, ammo)
+#	get_node("/root/globals").printOnScreen("%s/%s" % [mag, ammo])
 
 func reload():
 	if mag < max_mag and ammo > 0:

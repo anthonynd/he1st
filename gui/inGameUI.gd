@@ -15,3 +15,12 @@ func updateQuestList():
 		
 		qList += currentQuest + "\n"
 	$questList.bbcode_text = qList
+
+func playerHealth(current, total):
+	$playerInfo.text = "HP: %s/%s" % [current, total]
+
+func setGunName(name: String):
+	$gunInfo/gunName.text = "%s" % [name]
+
+func setGunAmmo(mag, ammo):
+	$gunInfo/gunAmmo.text = "%s/%s" % [mag, ammo]
