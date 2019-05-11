@@ -20,7 +20,7 @@ onready var Body = get_node("Body")
 func _ready():
 	if slot_1:
 		slots.append(slot_1.instance())
-		
+	
 	if slot_2:
 		slots.append(slot_2.instance())
 	
