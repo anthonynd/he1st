@@ -5,7 +5,7 @@ func _ready():
 	pass
 
 func updateQuestList():
-	var qList = "[b]Quests[/b]\n"
+	var qList = "[b]Objectives[/b]\n"
 	for quest in questManager.QuestList:
 		var currentQuest = "%s: %s / %s" % [quest.title, quest.currentValue, quest.goal]
 		if quest.optional:
