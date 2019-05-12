@@ -20,5 +20,5 @@ func clear_quests():
 
 func print_quests():
 	var inGameUI = gui.get_node("inGameUI")
-	if(gui and inGameUI):
+	if gui and inGameUI:
 		inGameUI.updateQuestList()

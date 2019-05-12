@@ -55,7 +55,6 @@ margin_bottom = 92.0
 text = "Exit"
 
 [node name="settings" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -92,6 +91,10 @@ anchor_bottom = 1.0
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 40.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="settings" type="Tree" parent="settings/settingsTabs/controls"]
 anchor_right = 1.0

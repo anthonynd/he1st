@@ -2,7 +2,6 @@ extends Node2D
 
 export (PackedScene) var Bullet
 
-
 export var max_mag = 30
 export var max_ammo = 30
 export var spread = 2 # For variety if need (not used yet)
@@ -21,7 +20,7 @@ func _ready():
 	ammo = max_ammo
 
 	visible = false
-	# Gun_Ray.cast_to = Vector2(0, distance)
+#	Gun_Ray.cast_to = Vector2(0, distance)
 	
 	rateat60fps = 1/(float(rate)/60)
 	timer = Timer.new()
@@ -29,21 +28,21 @@ func _ready():
 	timer.wait_time = rateat60fps
 	timer.one_shot = true
 	add_child(timer)
+	
 	set_ui()
-	
 	set_physics_process(true)
-	
+
 func shoot():
 	if mag > 0 and timer.time_left == 0:
-		#$Tip.rotation = deg2rad((randi() % spread) - spread/2)
-		#if Gun_Ray.is_colliding():
-		#	create_hit_partical(Gun_Ray.get_collision_point(), Gun_Ray.get_collision_normal().angle())
-		#	if Gun_Ray.get_collider() and Gun_Ray.get_collider().is_in_group("Damageable"):
-		#		print(Gun_Ray.get_collider())
-		#		Gun_Ray.get_collider().damage(damage_point)
-		#	trail(Gun_Ray.get_collision_point())
-		#else:
-		#	trail()
+#		$Tip.rotation = deg2rad((randi() % spread) - spread/2)
+#		if Gun_Ray.is_colliding():
+#			create_hit_partical(Gun_Ray.get_collision_point(), Gun_Ray.get_collision_normal().angle())
+#			if Gun_Ray.get_collider() and Gun_Ray.get_collider().is_in_group("Damageable"):
+#				print(Gun_Ray.get_collider())
+#				Gun_Ray.get_collider().damage(damage_point)
+#			trail(Gun_Ray.get_collision_point())
+#		else:
+#			trail()
 		
 		# Spawn bullet
 		var dir = global_rotation
@@ -54,7 +53,7 @@ func shoot():
 		timer.start()
 		mag -= 1
 		set_ui()
-	
+
 func set_ui():
 	var gui = get_node("/root/globals").gui
 	if gui and gui.get_node("inGameUI"):

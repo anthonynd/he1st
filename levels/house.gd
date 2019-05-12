@@ -1,7 +1,10 @@
 extends Node2D
 
+signal level_complete
+
 var collect_quest
 var kill_quest
+var escape_quest
 
 func _ready():
 	set_camera_limits()
@@ -33,8 +36,17 @@ func connect_collectibles():
 
 func _on_Collectible_picked_up():
 	questManager.progress_quest(collect_quest, 1)
+	scoreManager.add_score(5000)
+	add_escape_quest()
 	questManager.print_quests()
 
 func _on_Enemy_killed():
 	questManager.progress_quest(kill_quest, 1)
 	questManager.print_quests()
+
+func add_escape_quest():
+	escape_quest = questManager.add_quest("Escape the house", 1)
+	$EscapeArea.set_collision_mask_bit(1, true)
+
+func _on_EscapeArea_body_entered(body):
+	GUI.show_level_complete()

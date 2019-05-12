@@ -10,4 +10,3 @@ func _ready():
 func damage(health_point):
 	health -= health_point
 	return health
-	
