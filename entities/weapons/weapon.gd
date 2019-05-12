@@ -32,6 +32,9 @@ func _ready():
 	set_ui()
 	set_physics_process(true)
 
+func hasAmmo() -> bool:
+	return mag + ammo > 0
+
 func shoot():
 	if mag > 0 and timer.time_left == 0:
 #		$Tip.rotation = deg2rad((randi() % spread) - spread/2)

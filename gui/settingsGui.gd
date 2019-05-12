@@ -18,8 +18,7 @@ onready var settingsTabs = $settingsTabs
 func _ready():
 	_setButtons()
 	
-	for section in _settings:
-		print(section)
+	for section in settings._settings:
 		var sectionNode = settingsTabs.get_node(section)
 		if(sectionNode):
 			var settingsTree: Tree = sectionNode.get_node("settings")
@@ -33,10 +32,10 @@ func _ready():
 				# Create Base Tree
 				var root = settingsTree.create_item()
 				settingsTree.set_hide_root(true)
-				for key in _settings[section]:
+				for key in settings._settings[section]:
 					var child = settingsTree.create_item(root)
 					child.set_text(0, key)
-					child.set_text(1, "%s" % _settings[section][key])
+					child.set_text(1, "%s" % settings.getSetting(section,key))
 					child.set_editable(1, true)
 					
 

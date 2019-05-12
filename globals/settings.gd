@@ -51,9 +51,9 @@ var _settings = {
 }
 
 func _ready():
-	print(InputMap.get_actions()) #Has all the input settings for controls
-	print(OS.get_video_driver_name(OS.get_current_video_driver()))  #Has all the window settings
-	print(OS.get_audio_driver_name(0) )  #Has all the audio settings
+	#print(InputMap.get_actions()) #Has all the input settings for controls
+	#print(OS.get_video_driver_name(OS.get_current_video_driver()))  #Has all the window settings
+	#print(OS.get_audio_driver_name(0) )  #Has all the audio settings
 	
 	saveSettings()
 	pass
