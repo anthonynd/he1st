@@ -6,11 +6,6 @@
 [ext_resource path="res://entities/characters/player/player_with_hands.png" type="Texture" id=4]
 [ext_resource path="res://entities/characters/player/lightOfSight.gd" type="Script" id=5]
 
-
-
-
-
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.3675
 
@@ -26,6 +21,8 @@ detect_radius = 400
 
 [node name="mainCam" type="Camera2D" parent="."]
 current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 
 [node name="playerLight" type="Light2D" parent="."]
 texture = ExtResource( 3 )

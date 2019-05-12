@@ -23,8 +23,8 @@ func set_camera_limits():
 
 func init_quests():
 	questManager.clear_quests()
-	collect_quest = questManager.add_quest("Collect the flash drive", 1)
-	kill_quest = questManager.add_quest("Kill 2 enemies", 2, true)
+	collect_quest = questManager.add_quest("Collect the cash", 4)
+	kill_quest = questManager.add_quest("Kill all enemies", 6, true)
 
 func connect_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemies")
@@ -32,12 +32,15 @@ func connect_enemies():
 		enemy.connect("killed", self, "_on_Enemy_killed")
 
 func connect_collectibles():
-	$Collectible.connect("picked_up", self, "_on_Collectible_picked_up")
+	var collectibles = get_tree().get_nodes_in_group("collectibles")
+	for collectible in collectibles:
+		collectible.connect("picked_up", self, "_on_Collectible_picked_up")
 
 func _on_Collectible_picked_up():
 	questManager.progress_quest(collect_quest, 1)
-	scoreManager.add_score(5000)
-	add_escape_quest()
+	scoreManager.add_score(1000)
+	if questManager.QuestList[collect_quest].isDone():
+		add_escape_quest()
 	questManager.print_quests()
 
 func _on_Enemy_killed():

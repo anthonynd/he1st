@@ -9,7 +9,7 @@ export (int) var FOV
 
 export (float) var totalWaitTimeInSeconds = 2.0 # Second
 
-const RED = Color(1.0, 0, 0, 0.5)
+const RED = Color(1.0, 0, 0, 0.2)
 const YELLOW = Color(1.0, 1.0, 0, 0.2)
 const WHITE = Color(1, 1, 1, 0.2)
 
