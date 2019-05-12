@@ -2,7 +2,7 @@
 
 [ext_resource path="res://gui/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/BitPotion/bitPotionExtTitle.tres" type="DynamicFont" id=2]
-[ext_resource path="res://gui/settings.gd" type="Script" id=3]
+[ext_resource path="res://gui/settingsGui.gd" type="Script" id=3]
 
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
