@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gui/buttons/ResumeButton.gd" type="Script" id=1]
+
+[node name="ResumeButton" type="Button"]
+margin_right = 108.0
+margin_bottom = 28.0
+text = "Resume"
+script = ExtResource( 1 )
+[connection signal="pressed" from="." to="." method="_on_ResumeButton_pressed"]

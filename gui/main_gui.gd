@@ -37,6 +37,9 @@ func show_game_over():
 	main_menu.visible = false
 	pause_menu.visible = false
 	game_over.visible = true
+	
+func set_pause_screen_visibility(value):
+	pause_menu.visible = value
 
 func _input(event):
 	if (event.is_action_pressed("escape") 
