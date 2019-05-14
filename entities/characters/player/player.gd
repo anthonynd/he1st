@@ -6,6 +6,7 @@ export (int) var FOV = 50
 onready var gui = get_node("/root/globals").gui
 
 func _ready():
+	gui.in_game_ui.playerHealth(health, totalHealth)
 	set_slot(0)
 
 func _process(delta):
