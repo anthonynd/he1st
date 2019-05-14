@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gui/main_gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/fps.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://gui/inGameUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gui/LevelComplete.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/GameOver.tscn" type="PackedScene" id=7]
 
 [node name="main_gui" type="Control"]
 anchor_right = 1.0
@@ -43,4 +44,7 @@ visible = false
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource( 7 )]
 visible = false
