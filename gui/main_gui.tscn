@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gui/main_gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/fps.gd" type="Script" id=2]
-[ext_resource path="res://gui/inGameUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gui/LevelComplete.tscn" type="PackedScene" id=4]
-[ext_resource path="res://gui/mainMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/mainMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/inGameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gui/LevelComplete.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/PauseMenu.tscn" type="PackedScene" id=6]
 
 [node name="main_gui" type="Control"]
 anchor_right = 1.0
@@ -33,10 +34,13 @@ margin_right = 800.0
 margin_bottom = 22.0
 script = ExtResource( 2 )
 
-[node name="inGameUI" parent="." instance=ExtResource( 3 )]
+[node name="mainMenu" parent="." instance=ExtResource( 3 )]
+
+[node name="inGameUI" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="LevelComplete" parent="." instance=ExtResource( 4 )]
+[node name="LevelComplete" parent="." instance=ExtResource( 5 )]
 visible = false
 
-[node name="mainMenu" parent="." instance=ExtResource( 5 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+visible = false

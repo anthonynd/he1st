@@ -25,7 +25,6 @@ drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 
 [node name="playerLight" type="Light2D" parent="."]
-visible = false
 texture = ExtResource( 3 )
 energy = 0.5
 shadow_enabled = true

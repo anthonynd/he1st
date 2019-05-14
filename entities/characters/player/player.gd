@@ -39,7 +39,7 @@ func _process(delta):
 		set_slot(3)
 	
 	move_and_slide(velocity)
-	
+
 func damage(health_point):
 	var currentHealth = .damage(health_point)
 	if gui and gui.get_node("inGameUI"):

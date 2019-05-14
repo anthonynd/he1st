@@ -102,7 +102,7 @@ position = Vector2( 639.17, 402.518 )
 position = Vector2( 733.036, 546.718 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -125.191, 353.88 )
+position = Vector2( -99.8668, 355.828 )
 
 [node name="EscapeArea" type="Area2D" parent="."]
 collision_layer = 0
