@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/characters/player/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/weapons/guns/gun.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/circle.png" type="Texture" id=3]
-[ext_resource path="res://entities/characters/player/player_with_hands.png" type="Texture" id=4]
-[ext_resource path="res://entities/characters/player/lightOfSight.gd" type="Script" id=5]
+[ext_resource path="res://entities/particles/blood.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/circle.png" type="Texture" id=4]
+[ext_resource path="res://entities/characters/player/player_with_hands.png" type="Texture" id=5]
+[ext_resource path="res://entities/characters/player/lightOfSight.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.3675
@@ -17,6 +18,7 @@ __meta__ = {
 "_edit_group_": true
 }
 slot_1 = ExtResource( 2 )
+bloodEffect = ExtResource( 3 )
 detect_radius = 400
 
 [node name="mainCam" type="Camera2D" parent="."]
@@ -25,21 +27,21 @@ drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 
 [node name="playerLight" type="Light2D" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 energy = 0.5
 shadow_enabled = true
 shadow_gradient_length = 2.0
 shadow_filter_smooth = 2.0
 
 [node name="Body" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( 7, 0 )
 region_rect = Rect2( 264, 131, 48, 45 )
 
 [node name="lightOfSight" type="Light2D" parent="Body"]
 visible = false
 shadow_enabled = true
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

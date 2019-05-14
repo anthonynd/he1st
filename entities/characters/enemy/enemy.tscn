@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/characters/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://entities/weapons/guns/gun.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/characters/enemy/enemy.png" type="Texture" id=3]
+[ext_resource path="res://entities/particles/blood.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/characters/enemy/enemy.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.2112
@@ -15,6 +16,7 @@ __meta__ = {
 "_edit_group_": true
 }
 slot_1 = ExtResource( 2 )
+bloodEffect = ExtResource( 3 )
 speed = 120
 detect_radius = 400
 FOV = 80
@@ -23,7 +25,7 @@ FOV = 80
 shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

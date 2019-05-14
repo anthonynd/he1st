@@ -17,6 +17,9 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.has_method("damage"):
 			collision.collider.damage(damage)
+			
+		if collision.collider.has_method("bulletEffect"):
+			collision.collider.bulletEffect(collision.position, collision.normal)
 		explode()
 
 func explode():

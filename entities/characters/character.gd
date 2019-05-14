@@ -7,6 +7,8 @@ export (PackedScene) var slot_2
 export (PackedScene) var slot_3
 export (PackedScene) var throwable
 
+export (PackedScene) var bloodEffect
+
 export var speed = 300
 export var health = 100
 export var totalHealth = 100
@@ -39,7 +41,6 @@ func _ready():
 				add_child(sl)
 		
 		slots[current_slot].visible = true
-		#slots[current_slot].set_ui()
 	
 	pass
 
@@ -48,7 +49,14 @@ func set_slot(index):
 		slots[current_slot].visible = false
 		current_slot = index
 		slots[current_slot].visible = true
-		#slots[current_slot].set_ui()
+
+func bulletEffect(position, normal):
+	if(bloodEffect):
+		var be = bloodEffect.instance()
+		be.position = position.normalized()
+		add_child(be)
+		be.emitting = true
+	
 
 func damage(health_point):
 	health -= health_point
