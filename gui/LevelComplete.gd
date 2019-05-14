@@ -12,11 +12,9 @@ func set_score(value: int):
 	score.text = "Score: " + str(value)
 
 func restart_level():
-	# TODO: Fix to be dynamic
-	globals.setMap("house")
+	globals.reset_map()
+	globals.gui.show_game_ui()
 	scoreManager.score = 0
-	GUI.level_complete.visible = false
-	GUI.in_game_ui.visible = true
 
 func back_to_menu():
-	GUI.show_menu_screen()
+	globals.gui.show_menu_screen()

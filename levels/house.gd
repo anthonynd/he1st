@@ -9,7 +9,6 @@ var escape_quest
 func _ready():
 	set_camera_limits()
 	init_quests()
-	questManager.print_quests()
 	connect_enemies()
 	connect_collectibles()
 
@@ -41,15 +40,13 @@ func _on_Collectible_picked_up():
 	scoreManager.add_score(1000)
 	if questManager.QuestList[collect_quest].isDone():
 		add_escape_quest()
-	questManager.print_quests()
 
 func _on_Enemy_killed():
 	questManager.progress_quest(kill_quest, 1)
-	questManager.print_quests()
 
 func add_escape_quest():
 	escape_quest = questManager.add_quest("Escape the house", 1)
 	$EscapeArea.set_collision_mask_bit(1, true)
 
 func _on_EscapeArea_body_entered(body):
-	GUI.show_level_complete()
+	globals.gui.show_level_complete()

@@ -96,8 +96,8 @@ func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
 	var colors = PoolColorArray([color])
 	
 	for i in range(nb_points+1):
-    	var angle_point = angle_from + i*(angle_to-angle_from)/nb_points
-    	points_arc.push_back(center + Vector2( cos( deg2rad(angle_point) ), sin( deg2rad(angle_point) ) ) * radius)
+		var angle_point = angle_from + i*(angle_to-angle_from)/nb_points
+		points_arc.push_back(center + Vector2( cos( deg2rad(angle_point) ), sin( deg2rad(angle_point) ) ) * radius)
 	
 	# Set detection area to the created polygon
 	$DetectionArea/CollisionPolygon2D.polygon = points_arc

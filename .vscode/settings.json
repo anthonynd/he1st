@@ -1,0 +1,8 @@
+{
+    "GodotTools.godotVersion": 3,
+    "GodotTools.lint": {
+        "semicolon": true,
+        "conditionBrackets": true,
+        "unusedSymbols": true
+    },
+}

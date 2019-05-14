@@ -30,3 +30,12 @@ func setMap(mapName):
 	var s = load("res://levels/"+mapName+".tscn")
 	currentMap = s.instance()
 	mapNode.add_child(currentMap)
+
+func unset_map():
+	if currentMap:
+		currentMap.queue_free()
+	currentMap = null
+
+func reset_map():
+	# Fix to actually reset
+	setMap("house")

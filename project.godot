@@ -180,7 +180,6 @@ globals="*res://globals/globals.gd"
 settings="*res://globals/settings.gd"
 questManager="*res://globals/quest/questManager.gd"
 scoreManager="*res://globals/scoreManager.gd"
-GUI="*res://globals/gui.gd"
 
 [display]
 
