@@ -1,7 +1,7 @@
 extends "./destructible.gd"
 
 export (PackedScene) var AfterEffect
-onready var GameNode = get_node("/root/game")
+onready var GameNode = get_node("/root/root")
 
 func damage(health_point):
 	.damage(health_point)

@@ -8,27 +8,27 @@
 [ext_resource path="res://entities/characters/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/collectibles/Collectible.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1198.69, 301.781, 0.79056, 0, -0.79056, 0, 695.767, 301.254, 0, 0, 0, 0, 696.5, 397.959, 0, 0, 0, 0, 1198.96, 397.966, 0, 0, 0, 0, 1199.12, 306.313 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 319.344, -81.2775, 0, 0, 0, 0, 319.758, 151.687, 0, 0, 0, 0, 763.907, 151.721, 0, 0, 0, 0, 763.694, -81.0776, 0, 0, 0, 0, 741.058, -81.4188, 0, 0, 0, 0, 741.058, 130.212, 0, 0, 0, 0, 342.342, 129.549, 0, 0, 0, 0, 341.679, -80.7554, 0, 0, 0, 0, 319.344, -81.2775 )
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 867.862, 575.581, 0, 0, 0, 0, 867.981, 668.6, 0, 0, 0, 0, 1234.23, 668.523, 0, 0, 0, 0, 1234.23, 577.742, 0, 0, 0, 0, 1181.69, 576.538, 0, 0, 0, 0, 867.862, 575.581 )
 }
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 947.25, 705.3, 0, 0, 0, 0, 1156.25, 705.3, 0, 0, 0, 0, 1156.25, 911.45, 0, 0, 0, 0, 947.25, 911.45, 0, 0, 0, 0, 947.25, 705.3 )
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 35.5523, 160.434 )
 
 [node name="house" type="Node2D"]
@@ -54,7 +54,7 @@ tile_data = PoolIntArray( -65533, 434, 0, 3, 434, 0, 65539, 434, 0, 589827, 434,
 
 [node name="HallwayPath" type="Path2D" parent="paths"]
 editor/display_folded = true
-curve = SubResource( 4 )
+curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="paths/HallwayPath"]
 position = Vector2( 1198.69, 301.781 )
@@ -64,37 +64,42 @@ rotation = -3.14055
 
 [node name="BedroomPath" type="Path2D" parent="paths"]
 editor/display_folded = true
-curve = SubResource( 5 )
+curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="paths/BedroomPath"]
 position = Vector2( 319.344, -81.2775 )
-rotation = 1.56902
+rotation = 1.56901
 
 [node name="Enemy" parent="paths/BedroomPath/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="KitchenPath1" type="Path2D" parent="paths"]
 editor/display_folded = true
-curve = SubResource( 6 )
+curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="paths/KitchenPath1"]
 position = Vector2( 867.862, 575.581 )
-rotation = 1.56952
+rotation = 1.56955
 
 [node name="Enemy" parent="paths/KitchenPath1/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="KitchenPath2" type="Path2D" parent="paths"]
 editor/display_folded = true
-curve = SubResource( 7 )
+curve = SubResource( 4 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="paths/KitchenPath2"]
 position = Vector2( 947.25, 705.3 )
-rotation = 3.12081e-005
 
 [node name="Enemy" parent="paths/KitchenPath2/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="env" type="Node2D" parent="."]
 
 [node name="box" parent="env" instance=ExtResource( 5 )]
+
+[node name="box2" parent="env" instance=ExtResource( 5 )]
+position = Vector2( 639.17, 402.518 )
+
+[node name="box3" parent="env" instance=ExtResource( 5 )]
+position = Vector2( 733.036, 546.718 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -125.191, 353.88 )
@@ -105,7 +110,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeArea"]
 position = Vector2( -90.0897, 354.285 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 451.438, 732.163 )
