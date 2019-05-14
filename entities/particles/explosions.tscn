@@ -1,29 +1,29 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/box.png" type="Texture" id=1]
-[ext_resource path="res://entities/particals/particalRemove.gd" type="Script" id=2]
+[ext_resource path="res://entities/particles/particleRemove.gd" type="Script" id=2]
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
 particles_anim_h_frames = 2
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id=2]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, -360 ), 0.0, 1180.73, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=2]
-curve = SubResource( 1 )
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 1
 emission_sphere_radius = 25.0
 flag_align_y = true
@@ -41,14 +41,14 @@ linear_accel = 1.0
 damping = 40.0
 angle = 360.0
 angle_random = 1.0
-angle_curve = SubResource( 2 )
+angle_curve = SubResource( 3 )
 scale_random = 1.0
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 5 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
 [node name="explosions" type="Particles2D"]
-material = SubResource( 6 )
+material = SubResource( 1 )
 emitting = false
 amount = 6
 lifetime = 2.0
@@ -56,6 +56,6 @@ one_shot = true
 speed_scale = 5.0
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
