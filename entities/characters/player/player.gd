@@ -57,3 +57,4 @@ func die():
 	.die()
 	$Body.modulate = Color(0.7, 0.7, 0.7, 0.4)
 	globals.gui.show_game_over()
+	$CollisionShape2D.disabled = true
