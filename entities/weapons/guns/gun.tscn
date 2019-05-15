@@ -10,7 +10,9 @@ __meta__ = {
 "_edit_group_": true
 }
 Bullet = ExtResource( 2 )
+spread = 0.2
 rate = 120
+damage_point = 25
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
