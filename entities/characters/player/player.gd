@@ -28,7 +28,10 @@ func _process(delta):
 		if Input.is_action_just_pressed("reload"):
 			slots[current_slot].reload()
 		
-		if Input.is_action_just_pressed("click"):
+		if Input.is_action_just_pressed("click") && slots[current_slot].single_fire:
+			slots[current_slot].shoot()
+		
+		if Input.is_action_pressed("click") && !slots[current_slot].single_fire:
 			slots[current_slot].shoot()
 		
 		if Input.is_action_just_pressed("slot_1"):

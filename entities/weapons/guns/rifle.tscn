@@ -2,21 +2,22 @@
 
 [ext_resource path="res://entities/weapons/guns/gun.gd" type="Script" id=1]
 [ext_resource path="res://entities/weapons/guns/bullet/bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/weapons/guns/pistol.png" type="Texture" id=3]
+[ext_resource path="res://entities/weapons/guns/rifle.png" type="Texture" id=3]
 
-[node name="Gun" type="Node2D"]
+[node name="Rifle" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 Bullet = ExtResource( 2 )
+max_ammo = 120
 spread = 0.2
-rate = 120
+rate = 720
 damage_point = 25
-single_fire = true
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 10, 0 )
 texture = ExtResource( 3 )
 
 [node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 18, 0 )
+position = Vector2( 48, 0 )

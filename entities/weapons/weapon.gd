@@ -38,6 +38,7 @@ func shoot():
 		# Spawn bullet
 		var dir = global_rotation + (randf() * spread - spread/2)
 		var b = Bullet.instance()
+		b.damage = damage_point
 		b.start($Muzzle.global_position, dir)
 		get_tree().get_root().add_child(b)
 		
