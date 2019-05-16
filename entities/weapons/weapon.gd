@@ -45,6 +45,8 @@ func shoot():
 		timer.start()
 		mag -= 1
 		set_ui()
+		
+		$AudioStreamPlayer2D.play()
 
 func set_ui():
 	var gui = get_node("/root/globals").gui

@@ -53,7 +53,6 @@ tile_data = PoolIntArray( -65533, 434, 0, 3, 434, 0, 65539, 434, 0, 589827, 434,
 [node name="paths" type="Node2D" parent="."]
 
 [node name="HallwayPath" type="Path2D" parent="paths"]
-editor/display_folded = true
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="paths/HallwayPath"]
@@ -131,4 +130,5 @@ position = Vector2( 1166.86, 350.643 )
 
 [node name="Collectible4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1223.36, 740.247 )
+
 [connection signal="body_entered" from="EscapeArea" to="." method="_on_EscapeArea_body_entered"]
