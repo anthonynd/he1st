@@ -11,4 +11,3 @@ script = ExtResource( 1 )
 [node name="gui" type="CanvasLayer" parent="."]
 
 [node name="main_gui" parent="gui" instance=ExtResource( 2 )]
-

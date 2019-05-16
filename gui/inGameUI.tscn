@@ -41,6 +41,7 @@ margin_left = 20.0
 margin_top = -34.0
 margin_right = 120.0
 margin_bottom = -20.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "HP: 100/100"
 valign = 2
 
@@ -58,6 +59,7 @@ alignment = 2
 [node name="gunName" type="Label" parent="gunInfo"]
 margin_right = 47.0
 margin_bottom = 22.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Pistol"
 align = 2
 
@@ -65,5 +67,6 @@ align = 2
 margin_top = 26.0
 margin_right = 47.0
 margin_bottom = 48.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "10/500"
 align = 2
