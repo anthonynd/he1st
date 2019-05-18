@@ -3,9 +3,12 @@ extends Control
 func _ready():
 	var startBtn = $VBoxContainer/mainMenuButtons/startGameBtn
 	var settingsBtn = $VBoxContainer/mainMenuButtons/settingsBtn
+	var aboutBtn = $VBoxContainer/mainMenuButtons/aboutBtn
 	var exitBtn = $VBoxContainer/mainMenuButtons/exitGameBtn
+	
 	startBtn.connect("pressed", self, "_set_start_map")
 	settingsBtn.connect("pressed", self, "_show_settings")
+	aboutBtn.connect("pressed", self, "_show_about")
 	exitBtn.connect("pressed", self, "_exit_game")
 
 func _set_start_map():
@@ -17,8 +20,10 @@ func _set_start_map():
 		inGameUI.visible = true
 
 func _show_settings():
-	visible = false
-	get_parent().get_node("settings").visible = true
+	get_parent().setCurrentView(["settings"])
+	
+func _show_about():
+	get_parent().setCurrentView(["about"])
 
 func _exit_game():
 	get_tree().quit()

@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gui/mainMenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/BitPotion/bitPotionExtTitle.tres" type="DynamicFont" id=2]
-[ext_resource path="res://gui/settingsGui.gd" type="Script" id=3]
+[ext_resource path="res://gui/mainMenuGUI.gd" type="Script" id=1]
+[ext_resource path="res://gui/mainMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/BitPotion/bitPotionExtTitle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://gui/settingsGui.gd" type="Script" id=4]
+[ext_resource path="res://gui/about.gd" type="Script" id=5]
 
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="main" type="Control" parent="."]
+editor/display_folded = true
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -17,7 +22,7 @@ margin_left = -56.0
 margin_top = -76.0
 margin_right = 56.0
 margin_bottom = 76.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main"]
 editor/display_folded = true
@@ -33,13 +38,12 @@ margin_bottom = 92.0
 [node name="gameTitle" type="Label" parent="main/VBoxContainer"]
 margin_right = 112.0
 margin_bottom = 56.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "he1st"
 align = 1
 
 [node name="mainMenuButtons" type="VBoxContainer" parent="main/VBoxContainer"]
-editor/display_folded = true
 margin_top = 60.0
 margin_right = 112.0
 margin_bottom = 184.0
@@ -80,11 +84,10 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "A game by Anthony and Asim."
 
 [node name="settings" type="VBoxContainer" parent="."]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="title" type="Label" parent="settings"]
 margin_right = 800.0
@@ -127,7 +130,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="settingsButtons" type="HBoxContainer" parent="settings"]
-editor/display_folded = true
 margin_top = 572.0
 margin_right = 800.0
 margin_bottom = 600.0
@@ -146,3 +148,38 @@ margin_right = 800.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 100, 0 )
 text = "Save"
+
+[node name="about" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="aboutPanel" type="Panel" parent="about"]
+margin_right = 800.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="info" type="RichTextLabel" parent="about/aboutPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+focus_mode = 2
+selection_enabled = true
+
+[node name="buttons" type="HBoxContainer" parent="about"]
+margin_top = 572.0
+margin_right = 800.0
+margin_bottom = 600.0
+alignment = 2
+
+[node name="back" type="Button" parent="about/buttons"]
+margin_left = 700.0
+margin_right = 800.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 100, 0 )
+text = "Back"

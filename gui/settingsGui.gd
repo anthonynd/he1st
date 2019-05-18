@@ -51,7 +51,6 @@ func _saveSettings():
 	pass
 	
 func _closeSettings():
-	visible = false
-	get_parent().get_node("main").visible = true
+	get_parent().setCurrentView(["main"])
 	#Get previous settings
 	pass
