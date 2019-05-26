@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/house.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset/main.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/tileset/terrain_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://entities/characters/enemy/enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/destructibles/box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/characters/player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://entities/collectibles/Collectible.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/environment/teleportPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/destructibles/box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/characters/player/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/collectibles/Collectible.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -51,6 +52,7 @@ format = 1
 tile_data = PoolIntArray( -65533, 434, 0, 3, 434, 0, 65539, 434, 0, 589827, 434, 0, 655363, 434, 0, 655380, 434, 0, 720899, 434, 0, 720916, 434, 0, 786435, 434, 0, 786452, 434, 0, 851971, 434, 0 )
 
 [node name="paths" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="HallwayPath" type="Path2D" parent="paths"]
 curve = SubResource( 1 )
@@ -90,20 +92,33 @@ position = Vector2( 947.25, 705.3 )
 
 [node name="Enemy" parent="paths/KitchenPath2/PathFollow2D" instance=ExtResource( 4 )]
 
+[node name="teleports" type="Node2D" parent="."]
+
+[node name="a" parent="teleports" instance=ExtResource( 5 )]
+connectionName = "floor1"
+
+[node name="b" parent="teleports" instance=ExtResource( 5 )]
+position = Vector2( 720, -240 )
+scale = Vector2( 0.997722, 1 )
+connectionName = "floor1"
+
 [node name="env" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="box" parent="env" instance=ExtResource( 5 )]
+[node name="box" parent="env" instance=ExtResource( 6 )]
+position = Vector2( 150, 151.721 )
 
-[node name="box2" parent="env" instance=ExtResource( 5 )]
+[node name="box2" parent="env" instance=ExtResource( 6 )]
 position = Vector2( 639.17, 402.518 )
 
-[node name="box3" parent="env" instance=ExtResource( 5 )]
+[node name="box3" parent="env" instance=ExtResource( 6 )]
 position = Vector2( 733.036, 546.718 )
 
-[node name="player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -99.8668, 355.828 )
+[node name="player" parent="." instance=ExtResource( 7 )]
+position = Vector2( -99.0094, 355.828 )
 
 [node name="EscapeArea" type="Area2D" parent="."]
+editor/display_folded = true
 collision_layer = 0
 collision_mask = 0
 
@@ -119,16 +134,15 @@ rotation = 1.5708
 position = Vector2( 1056, 128.117 )
 rotation = 3.14159
 
-[node name="Collectible" parent="." instance=ExtResource( 7 )]
+[node name="Collectible" parent="." instance=ExtResource( 8 )]
 position = Vector2( 654.534, 627.262 )
 
-[node name="Collectible2" parent="." instance=ExtResource( 7 )]
+[node name="Collectible2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 537.653, 11.6882 )
 
-[node name="Collectible3" parent="." instance=ExtResource( 7 )]
+[node name="Collectible3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1166.86, 350.643 )
 
-[node name="Collectible4" parent="." instance=ExtResource( 7 )]
+[node name="Collectible4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1223.36, 740.247 )
-
 [connection signal="body_entered" from="EscapeArea" to="." method="_on_EscapeArea_body_entered"]
