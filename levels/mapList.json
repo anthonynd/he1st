@@ -1,0 +1,9 @@
+{
+    "house": {
+        "1": {
+            "location": "Potato Town",
+            "description": "This is where you start your adventure.",
+            "itemsRequired": []
+        }
+    }
+}

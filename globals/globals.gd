@@ -30,6 +30,17 @@ func setMap(mapName):
 	var s = load("res://levels/"+mapName+".tscn")
 	currentMap = s.instance()
 	mapNode.add_child(currentMap)
+	
+func setMapWithLevel(mapName, level):
+	if(!mapNode):
+		return
+
+	if(currentMap):
+		currentMap.queue_free()
+
+	var s = load("res://levels/" + mapName+ "/"+ level +".tscn")
+	currentMap = s.instance()
+	mapNode.add_child(currentMap)
 
 func unset_map():
 	if currentMap:

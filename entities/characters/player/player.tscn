@@ -33,10 +33,12 @@ drag_margin_v_enabled = false
 texture = ExtResource( 5 )
 energy = 0.5
 shadow_enabled = true
-shadow_gradient_length = 2.0
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_filter = 5
 shadow_filter_smooth = 2.0
 
 [node name="Body" type="Sprite" parent="."]
+light_mask = 0
 texture = ExtResource( 6 )
 offset = Vector2( 7, 0 )
 region_rect = Rect2( 264, 131, 48, 45 )
@@ -47,4 +49,5 @@ shadow_enabled = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
 shape = SubResource( 1 )
