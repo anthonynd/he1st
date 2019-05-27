@@ -1,4 +1,4 @@
-extends "./map.gd"
+extends "../map.gd"
 
 var collect_quest
 var kill_quest

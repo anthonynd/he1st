@@ -15,6 +15,8 @@ var ammo
 var rateat60fps
 var timer
 
+var playerHoldingGun = false
+
 func _ready():
 	mag = max_mag
 	ammo = max_ammo
@@ -26,6 +28,8 @@ func _ready():
 	timer.wait_time = rateat60fps
 	timer.one_shot = true
 	add_child(timer)
+	
+	playerHoldingGun = isPlayer()
 	
 	set_ui()
 	set_physics_process(true)
@@ -50,8 +54,19 @@ func shoot():
 
 func set_ui():
 	var gui = get_node("/root/globals").gui
-	if gui and gui.get_node("inGameUI"):
+	if gui and gui.get_node("inGameUI") && playerHoldingGun:
 		gui.get_node("inGameUI").setGunAmmo(mag, ammo)
+
+func isPlayer():
+	var parent = get_parent()
+	while(true):
+		if(!parent):
+			return false
+		
+		if(parent.name == "player"):
+			return true
+		
+		parent = parent.get_parent()
 
 func reload():
 	if mag < max_mag and ammo > 0:

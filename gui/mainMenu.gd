@@ -13,7 +13,7 @@ func _ready():
 
 func _set_start_map():
 	get_parent().visible = false
-	get_node("/root/globals").setMapWithLevel("house", "1")
+	get_node("/root/globals").setMapWithLevel("house", "house_1")
 	
 	var inGameUI = get_node("/root/globals").gui.get_node("inGameUI")
 	if inGameUI and !inGameUI.visible:

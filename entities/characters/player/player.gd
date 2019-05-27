@@ -56,6 +56,7 @@ func set_slot(index: int):
 	var gui = get_node("/root/globals").gui
 	if gui and gui.get_node("inGameUI"):
 		gui.get_node("inGameUI").setGunName(slots[current_slot].name)
+		slots[current_slot].set_ui()
 
 func die():
 	.die()
