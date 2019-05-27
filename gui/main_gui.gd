@@ -17,6 +17,7 @@ func show_level_complete():
 func show_menu_screen():
 	globals.unset_map() # TODO: Move out of gui script (use signal handler?)
 	setCurrentView(["mainMenu"])
+	globals.setMap("mainMenu")
 
 func show_game_over():
 	game_over.set_score(scoreManager.score) # TODO: Remove (local score node instead of global)

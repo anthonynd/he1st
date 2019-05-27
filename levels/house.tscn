@@ -94,6 +94,7 @@ position = Vector2( 947.25, 705.3 )
 [node name="Enemy" parent="paths/KitchenPath2/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="teleports" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 5 )
 
 [node name="a" parent="teleports" instance=ExtResource( 6 )]

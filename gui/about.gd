@@ -12,7 +12,9 @@ func start():
 	
 	$aboutPanel/info.text = "he1st LICENSE\n\n" + licenseFile.get_as_text() + \
 		"\nOther LICENSES\n\n" + distLicenseFile.get_as_text()
-	print()
+	
+	licenseFile.close()
+	distLicenseFile.close()
 
 func end():
 	$aboutPanel/info.text = null

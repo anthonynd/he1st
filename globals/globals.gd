@@ -1,5 +1,7 @@
 extends Node
 
+onready var mapLoader = load("res://globals/helper/mapLoader.gd").new()
+
 var debugMessages = [];
 
 var currentScene = null
@@ -11,6 +13,7 @@ func _ready():
 	currentScene = get_tree().root.get_child( get_tree().root.get_child_count() - 1)
 	gui = currentScene.get_node("gui/main_gui")
 	mapNode = currentScene.get_node("map")
+	print(mapLoader.getMap(mapLoader.getMapList()[0]))
 
 func printOnScreen(value):
 	if(gui and gui.get_node("debug")):
